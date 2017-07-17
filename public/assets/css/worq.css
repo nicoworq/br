@@ -1,0 +1,273 @@
+/* -----------
+ * APP
+ * ----------- */
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/* -----------
+ *  LOGIN
+ * ----------- */
+
+#login , #lost-password, #register{
+    background: url(../img/brio_bg.jpg) no-repeat 50%;
+    background-size:cover;
+}
+
+
+
+
+/* -----------
+ *  DASHBOARD
+ * ----------- */
+
+.tabla-preview td{
+    max-width: 230px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+.estado-cuenta{
+    font-size: 3.07692rem;
+}
+.panel-border-color-danger .estado-cuenta{
+    color: #F45846;
+}
+.panel-border-color-warning .estado-cuenta{
+    color: #FFDC42;
+}
+.panel-border-color-primary .estado-cuenta{
+    color: #2cc185;
+}
+
+.btn-ver-todos{
+    padding: 20px 15px 15px;
+    text-align: right;
+    border-top: 1px solid #f1f1f1;
+}
+.btn-ver-todos .btn{}
+.btn-ver-todos .btn i {
+    font-size: 22px !important;
+    margin-right: 7px !important;
+    margin-left: 5px;
+}
+
+/* -----------
+ *  ELEMENTO HOME
+ * ----------- */
+
+.listado-item{
+    overflow: hidden;
+    border-top: 1px solid #f5f5f5;
+    padding: 15px 0;
+}
+.cabecera-listado{
+    overflow: hidden;
+    padding: 0 20px;
+    margin-bottom: 4px;
+}
+.cabecera-listado h6{
+    float: right;
+    font-size: 12px;
+    color: #b7b7b7;
+}
+.cabecera-listado time{
+    float: left;
+    font-size: 12px;
+    color: #adadad;
+}
+.cuerpo-listado{
+    padding: 0 20px;
+    overflow: hidden;
+    text-align: center;
+}
+.item-listado{
+      display: inline-block;
+      margin-left: 55px;
+      text-align: right;
+      float: right;
+}
+.icon-listado{
+    float: left;
+    font-size: 36px;
+    line-height: 1;
+    padding-top: 7px;
+    margin-top: 10px;
+}
+.accion-listado{
+    float: right;
+    font-size: 36px;
+    min-width: 60px;
+    text-align: right;
+    margin-top: 7px;
+}
+
+.impaga .item-listado-importe-abonado span{
+    color: #FFDC42;
+}
+.impaga .icon-listado{
+    color: #FFDC42;
+}
+.impaga.vencida .item-listado-importe-abonado span{
+    color: red;
+}
+.impaga.vencida .icon-listado{
+    color: red;
+}
+
+/* -----------
+ *  AJAXING
+ * ----------- */
+.ajaxing {
+    position: absolute;
+    z-index: 100;
+    background: rgba(238,238,238,0.5);
+    text-align: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    /* display: none; */
+    border-radius: 4px;
+    right: 0;
+}
+
+@-webkit-keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+.ajaxing span {
+    -webkit-animation: rotating 1s linear infinite;
+    -moz-animation: rotating 1s linear infinite;
+    -ms-animation: rotating 1s linear infinite;
+    -o-animation: rotating 1s linear infinite;
+    animation: rotating 1s linear infinite;
+    width: 32px;
+    height: 32px;
+    background: url(../img/loader.png);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -16px;
+    margin-left: -16px
+}
+
+/* -----------
+ *  ENVIOS
+ * ----------- */
+
+.item-listado-destinatario{
+    margin: 0;
+    max-width: 410px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: right;
+    margin-right: 0;
+}
+.item-listado-destino .indicator-value-counter{
+    /* font-size: 16px; */
+    cursor: default;
+}
+
+/* -----------
+ *  ENVIOS SECCION
+ * ----------- */
+
+.envio-full .item-listado{
+    float: right;
+    margin-right: 20px;
+}
+.envio-full .icon-listado {
+    margin-right: 20px;
+    margin-top: 15px;
+}
+.envio-full .item-listado-destino{
+    width: 400px;
+}
+
+.envio-full .item-listado-bultos{
+    
+}
+.envio-full .item-listado-kilos span{min-width: 44px;display: inline-block;}
+
+.envio-full .item-listado-direccion{
+    width: 288px;
+}
+.envio-full .item-listado-destinatario{
+    width: auto;
+    max-width: none;
+}
+
+/* -----------
+ *  DETALLE ENVIO
+ * ----------- */
+
+#tapa-envio{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.48);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding-top: 30vh;
+}
+
+#detalle-envio{
+    background: white;
+    width: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#detalle-envio-cerrar{
+        color: white;
+        font-size: 28px;
+        position: absolute;
+        top: -45px;
+        right: -45px;
+        cursor: pointer;
+}
+
+.fila-listado-detalle{
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+#detalle-envio .fila-listado-detalle .item-listado {
+    float: right;
+}
