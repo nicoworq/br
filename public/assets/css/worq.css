@@ -3,7 +3,7 @@
  * ----------- */
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+    display: none !important;
 }
 
 /* -----------
@@ -55,6 +55,42 @@
     margin-left: 5px;
 }
 
+
+/* -----------
+ *  BOTON DOBLE
+ * ----------- */
+
+
+.btn-doble{
+    border: 1px solid #94b24a;
+    vertical-align: top;
+    line-height: 1;
+    border-radius: 3px;
+    height: auto;
+    padding: 7px 2px;
+    overflow: hidden;
+    background: #94b24a;
+    margin-top: 4px;
+    margin-bottom: 5px;
+}
+.btn-doble a{
+    font-size: 12px;
+    display: block;
+    line-height: 1;
+    float: left;
+    padding: 3px 7px;
+    color: white;
+    transform: scale(1) !important;
+    transition: .2s all ease;
+}
+.btn-doble a:hover{
+    color: #424242;
+}
+.btn-doble a:first-child{
+    border-right: 1px solid white;
+}
+.btn-doble a:last-child{}
+
 /* -----------
  *  ELEMENTO HOME
  * ----------- */
@@ -84,11 +120,32 @@
     overflow: hidden;
     text-align: center;
 }
+.cuerpo-listado.cuerpo-listado-detalle{
+    text-align: left;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.detalle-destinatario{
+    /* width: 220px; */
+    margin-right: 10px;
+}
+.detalle-direccion{
+    /* max-width: 260px; */
+}
+.detalle-localidad{}
+
 .item-listado{
-      display: inline-block;
-      margin-left: 55px;
-      text-align: right;
-      float: right;
+    display: inline-block;
+    margin-left: 55px;
+    text-align: right;
+    float: right;
+}
+.item-listado-importe-total{
+    margin-left: 0;
 }
 .icon-listado{
     float: left;
@@ -104,6 +161,18 @@
     text-align: right;
     margin-top: 7px;
 }
+.accion-listado a{
+    cursor: pointer;
+    display: inline-block;
+    transition: .2s all ease;
+}
+.accion-listado:hover a{
+    transform: scale(1.2);
+}
+.accion-listado-factura{
+    margin-left: 35px;
+    padding-top: 5px;
+}
 
 .impaga .item-listado-importe-abonado span{
     color: #FFDC42;
@@ -118,6 +187,16 @@
     color: red;
 }
 
+
+/* -----------
+ *  FOOTER
+ * ----------- */
+
+footer{
+    background: #53544d;
+    padding: 80px 0;
+    margin-top: 34px;
+}
 /* -----------
  *  AJAXING
  * ----------- */
@@ -190,6 +269,19 @@
  *  ENVIOS
  * ----------- */
 
+.icono-transito{
+    width: 45px;
+}
+.icono-transito img{
+      width: 48px;
+      height: 48px;
+}
+
+.envio-entregado{
+    font-size: 52px;
+    margin-top: -6px;
+    display: block;
+}
 .item-listado-destinatario{
     margin: 0;
     max-width: 410px;
@@ -199,10 +291,58 @@
     float: right;
     margin-right: 0;
 }
+.item-listado-destinatario-home{
+    margin-left: 20px;
+    width: 230px;
+}
+
+.item-listado-localidad-home{
+    margin-left: 0;
+}
+
 .item-listado-destino .indicator-value-counter{
     /* font-size: 16px; */
     cursor: default;
 }
+
+/* -----------
+ *  PAGINACION
+ * ----------- */
+
+.contenedor-paginacion{
+    text-align: center;
+    width: 100%;
+}
+.pagination {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 20px 0 70px;
+    display: block;
+}
+.pagination li {
+    display: inline-block;
+    margin: 0 5px;
+}
+.pagination li a {
+    border: 1px solid #fff;
+    padding: 10px 15px;
+    border-radius: 2px;
+    color: #000;
+    font-weight: 600;
+    background: white;
+    font-size: 16px;
+    transition: .2s all ease;
+}
+.pagination li a:hover{
+    opacity: 0.7;
+}
+
+.pagination li.active a {
+    background: white;
+    border-color: #aab93f;
+}
+
 
 /* -----------
  *  ENVIOS SECCION
@@ -221,7 +361,7 @@
 }
 
 .envio-full .item-listado-bultos{
-    
+
 }
 .envio-full .item-listado-kilos span{min-width: 44px;display: inline-block;}
 
@@ -245,23 +385,23 @@
     left: 0;
     right: 0;
     z-index: 10;
-    padding-top: 30vh;
+    padding-top: 18vh;
 }
 
 #detalle-envio{
     background: white;
-    width: 700px;
+    width: 600px;
     margin: 0 auto;
     position: relative;
 }
 
 #detalle-envio-cerrar{
-        color: white;
-        font-size: 28px;
-        position: absolute;
-        top: -45px;
-        right: -45px;
-        cursor: pointer;
+    color: white;
+    font-size: 28px;
+    position: absolute;
+    top: -45px;
+    right: -45px;
+    cursor: pointer;
 }
 
 .fila-listado-detalle{

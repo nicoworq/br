@@ -337,7 +337,7 @@ body {
     font-weight: normal;
     line-height: 1.538;
     color: #545454;
-    background-color: #f4f4f4;
+    background-color: #e9e9e9;
 }
 
 [tabindex="-1"]:focus {
@@ -2389,8 +2389,8 @@ fieldset[disabled] a.btn {
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
-    background-color: #2cc185;
-    border-color: #2cc185;
+    background-color: #a8cc50;
+    border-color: #a8cc50;
 }
 
 .btn-primary:active, .btn-primary.active,
@@ -2841,7 +2841,7 @@ tbody.collapse.show {
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    right: -1px;
     z-index: 1000;
     display: none;
     float: left;
@@ -3258,7 +3258,7 @@ tbody.collapse.show {
 }
 
 .custom-control-input:checked ~ .custom-control-indicator {
-    color: #2cc185;
+    color: #94b24a;
     background-color: #FFFFFF;
 }
 
@@ -9515,10 +9515,11 @@ p {
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
-    /*background-color: #2cc185;*/
-    background-color: #1a7b55;
+    /* background-color: #2cc185; */
+    background-color: #51853a;
     padding: 0 0 70px;
     padding: 0 0 10px;
+    background: #94b24a;
 }
 
 @media (max-width: 767px) {
@@ -9613,7 +9614,7 @@ p {
     font-weight: 500;
     line-height: 54px;
     min-width: 120px;
-    padding: 5px 40px;
+    padding: 1px 25px;
     text-align: center;
     border-radius: 3px 3px 0 0;
     color: #FFFFFF;
@@ -9664,7 +9665,7 @@ p {
 
 .mai-sub-header .navbar-nav > .nav-item > .nav-link:hover {
     background-color: transparent;
-    color: #aacabd;
+    color: #070707;
 }
 
 @media (max-width: 767px) {
@@ -9693,7 +9694,7 @@ p {
 }
 
 .mai-sub-header .navbar-nav > .nav-item.open > a, .mai-sub-header .navbar-nav > .nav-item.open:hover > a {
-    color: #2cc185;
+    color: #070707;
     background-color: #FFFFFF;
 }
 
@@ -9916,7 +9917,7 @@ p {
 
 .splash-container .alternative-message {
     color: #56cc9c;
-    color: #24ab74;
+    color: #95C419;
     display: block;
     margin-top: 20px;
 }
@@ -9937,6 +9938,7 @@ p {
     background-color: #363636;
     color: #d4d4d4;
     /* background:#3b3a35; */
+    /* background: #53544D; */
 }
 
 .splash-container .form-message .out-links a {
@@ -9979,7 +9981,7 @@ p {
 
 .splash-container .input-group .input-group-addon .icon {
     font-size: 20px;
-    color: #2cc185;
+    color: #95C419;
 }
 
 .splash-container .input-group .form-control {
@@ -11204,6 +11206,7 @@ li.L9 {
     margin-bottom: 29px;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
     border-radius: 1px;
+    position: relative;
 }
 
 .panel-body {
@@ -13370,11 +13373,15 @@ li.L9 {
     border-color: #2cc185;
     background-color: #269065;
     border-color: #269065;
+    background: #94b24a;
+    border-color: #94b24a;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .btn-primary:hover, .btn-primary.hover {
     border-color: transparent;
-    background-color: #31d090;
+    background-color: #a8cc50;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -13392,7 +13399,7 @@ li.L9 {
 .btn-primary:active, .btn-primary.active,
 .open > .btn-primary.dropdown-toggle {
     border-color: transparent;
-    background-color: #27ac77;
+    background-color: #94b24a;
 }
 
 .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus,
@@ -14765,7 +14772,7 @@ pre code {
 }
 
 .custom-control-input:checked ~ .custom-control-indicator {
-    border-color: #2cc185;
+    border-color: #94b24a;
 }
 
 .custom-control-input:checked ~ .custom-control-color {
@@ -19350,7 +19357,7 @@ fieldset[disabled] .full-calendar .fc-button.active {
 }
 
 .indicator-value-counter {
-    font-size: 1.84615rem;
+    font-size: 22px;
 }
 
 .indicator-value-title {
@@ -20196,3 +20203,6 @@ fieldset[disabled] .full-calendar .fc-button.active {
     float: right;
     font-size: 36px;
 }
+
+
+.datepicker a,[datepicker] a,datepicker a{color:inherit;text-decoration:none}.datepicker a:hover,[datepicker] a:hover,datepicker a:hover{text-decoration:none}.datepicker select,.datepicker select:focus,.datepicker select:hover,[datepicker] select,[datepicker] select:focus,[datepicker] select:hover,datepicker select,datepicker select:focus,datepicker select:hover{width:100%;overflow:hidden;background:0 0;color:#fff;background-color:#138efa;border-radius:2px;border:0;margin-top:5px}._720kb-datepicker-calendar-body,._720kb-datepicker-calendar-days-header,._720kb-datepicker-calendar-header,._720kb-datepicker-calendar-years-pagination-pages,.datepicker,[datepicker],datepicker{/* font-family:Helvetica Neue,Arial,sans-serif; */font-size:13.5px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;width:100%;margin:0 auto;float:left;clear:right;position:relative;}._720kb-datepicker-calendar{background:#fff;color:#333;position:absolute;z-index:999;min-width:220px;margin:0 auto;width:101%;-webkit-box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;-moz-box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;box-shadow:0 0 0 1px rgba(0,0,0,.1) inset;visibility:hidden;overflow:hidden;margin-left:-.5%;padding:0 0 2% 0;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}._720kb-datepicker-calendar._720kb-datepicker-forced-to-open,._720kb-datepicker-calendar._720kb-datepicker-open{visibility:visible}._720kb-datepicker-calendar-header{text-align:center;font-size:15px;line-height:40px}._720kb-datepicker-calendar-header:nth-child(odd){background: #269065;}._720kb-datepicker-calendar-header:nth-child(even){background: rgba(38, 144, 101, 0.13);}._720kb-datepicker-calendar-header-left,._720kb-datepicker-calendar-header-middle,._720kb-datepicker-calendar-header-right{width:15%;float:left}._720kb-datepicker-calendar-header-middle{width:70%}._720kb-datepicker-calendar-header-closed-pagination::after{content:" \25BE"}._720kb-datepicker-calendar-header-opened-pagination::after{content:" \25BE";margin-left:4px;position:relative;bottom:-3px;display:inline-block;-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-o-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}._720kb-datepicker-calendar-body{width:96%;margin:2%;text-align:center}._720kb-datepicker-calendar-day{cursor:pointer;font-size:12.5px;width:12.2%;margin:5px 1%;padding:1.5% 0;float:left;-webkit-border-radius:1px;-moz-border-radius:1px;border-radius:1px}._720kb-datepicker-calendar-day._720kb-datepicker-active,._720kb-datepicker-calendar-day:hover{background:rgba(0,0,0,.03)}._720kb-datepicker-calendar-header a,._720kb-datepicker-calendar-header a:hover{text-decoration:none;padding:3% 9% 4% 9%;font-size:13.5px;color:rgba(0,0,0,.55);font-weight:700;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}._720kb-datepicker-calendar-header a:hover{color:rgba(0,0,0,.9);background:rgba(255,255,255,.45)}._720kb-datepicker-calendar-month{color:#fff}._720kb-datepicker-calendar-month span{font-size:13px;color:rgba(0,0,0,.4)}._720kb-datepicker-calendar-month a span i{font-style:normal;font-size:15px}._720kb-datepicker-calendar-month a,._720kb-datepicker-calendar-month a:hover{padding:3px;margin-left:1%}._720kb-datepicker-calendar-years-pagination{padding:2% 0 0 0;float:left;clear:right;width:100%}._720kb-datepicker-calendar-years-pagination a,._720kb-datepicker-calendar-years-pagination a:hover{font-size:12px;padding:0 7px;font-weight:400;margin:3px 1% 0 1%;line-height:20px;display:inline-block}._720kb-datepicker-calendar-years-pagination a._720kb-datepicker-active{color:rgba(0,0,0,.9);font-weight:500;background:rgba(255,255,255,.45)}._720kb-datepicker-calendar-years-pagination-pages a,._720kb-datepicker-calendar-years-pagination-pages a:hover{padding:5px 10px}._720kb-datepicker-calendar-days-header{max-width:100%;margin:0 auto;padding:0 2% 0 2%;background: rgba(38, 144, 101, 0.11);border-bottom:1px solid rgba(0,0,0,.02);}._720kb-datepicker-calendar-days-header div{width:14.18%;font-weight:500;font-size:11.5px;padding:10px 0;float:left;text-align:center;color:rgba(0,0,0,.7)}._720kb-datepicker-calendar-days ._720kb-datepicker-default-button{font-size:18.5px;position:relative;bottom:-.5px}._720kb-datepicker-default-button{padding:0 4.5px}._720kb-datepicker-calendar-header-middle._720kb-datepicker-mobile-item{width:95%;float:none;margin:0 auto}._720kb-datepicker-item-hidden{visibility:hidden}._720kb-datepicker-calendar-day._720kb-datepicker-disabled,._720kb-datepicker-calendar-day._720kb-datepicker-disabled:hover,._720kb-datepicker-calendar-years-pagination a._720kb-datepicker-active._720kb-datepicker-disabled,._720kb-datepicker-calendar-years-pagination a._720kb-datepicker-active._720kb-datepicker-disabled:hover,._720kb-datepicker-calendar-years-pagination a._720kb-datepicker-disabled,._720kb-datepicker-calendar-years-pagination a._720kb-datepicker-disabled:hover{color:rgba(0,0,0,.2);background:rgba(25,2,0,.02);cursor:default}
