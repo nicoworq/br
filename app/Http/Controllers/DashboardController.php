@@ -26,7 +26,7 @@ class DashboardController extends Controller {
 
         //$cliente = Cliente::where('ClienteID', 95)->get()->first();
 
-        $envios = Envio::where('clienteidorigen', $cliente->ClienteID)->limit(5)->get();
+        $envios = Envio::where('clienteidorigen', $cliente->ClienteID)->orderBy('fechaenvio', 'desc')->limit(5)->get();
         $facturas = Factura::where('ClienteID', $cliente->ClienteID)->limit(5)->get();
 
         $condicionCobro = intval($cliente->DiasSaldoPendiente);

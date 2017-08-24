@@ -7,7 +7,9 @@ use App\Cliente;
 
 class LoginController extends Controller {
 
-    protected $campoEmail = 'EmailEnvioCompCtaCte';
+    protected $campoEmail = 'Email';
+    protected $campoUsuarioWeb = 'UsuarioWeb';
+    protected $campoPassWeb = 'ContraseñaWeb';
 
     public function login(Request $request) {
 
@@ -15,17 +17,21 @@ class LoginController extends Controller {
         $datosLogin = $request->input("usuario");
 
         //TODO: fix
-        $cliente = Cliente::where($this->campoEmail, "LIKE", '%' . $datosLogin['email'] . '%')->get();
+        $clientes = Cliente::where($this->campoEmail, trim($datosLogin['email']))
+                        ->orWhere($this->campoUsuarioWeb, trim($datosLogin['email']))->get();
 
-        if (!$cliente->isEmpty()) {
-            if (!$request->session()->has('cliente')) {
-                $request->session()->put('cliente', $cliente->first());
+
+
+        if (!$clientes->isEmpty()) {
+            $cliente = $clientes->first();
+            
+            if (trim($cliente->ContraseñaWeb) === trim($datosLogin["password"])) {
+                $request->session()->put('cliente', $clientes[0]);
+                return ['logged' => TRUE, 'msg' => 'Redirigiendo'];
             }
-            return ['logged' => TRUE, 'msg' => 'Redirigiendo'];
-        } else {
-
-            return ['logged' => FALSE, 'error' => 'Usuario y/o contraseña inválidos'];
         }
+
+        return ['logged' => FALSE, 'error' => 'Usuario y/o contraseña inválidos'];
     }
 
 }
