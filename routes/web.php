@@ -12,7 +12,7 @@
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 Route::get('/login', ['as' => 'login', function () {
         return view('login');
@@ -25,7 +25,14 @@ Route::get('/register', function () {
 });
 
 Route::get('/facturacion', 'FacturacionController@view');
+
+/*
+ * ENVIOS
+ */
+
 Route::get('/envios', 'EnviosController@view');
+Route::get('/traer-envios/{page}', 'EnviosController@traerEnvios');
+Route::get('/buscar-envio/', 'EnviosController@buscarEnvios');
 
 
 /*
@@ -41,3 +48,10 @@ Route::get('/traer-envio/{id_envio}', 'DashboardController@traerEnvio');
  */
 
 Route::post('/login-action', 'LoginController@login');
+
+
+/*
+ * REGISTER
+ */
+
+Route::post('/register-action', 'RegisterController@register');
