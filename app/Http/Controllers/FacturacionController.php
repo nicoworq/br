@@ -18,14 +18,14 @@ class FacturacionController extends Controller {
 
         $cliente = $request->session()->get('cliente');
 
-        $envios = Envio::where('clienteidorigen', $cliente->ClienteID)->limit(5)->get();
-        $facturas = Factura::where('ClienteID', $cliente->ClienteID)->limit(5)->get();
+        
+        $facturas = Factura::where('ClienteID', $cliente->ClienteID)->orderBy('FechaComprobante', 'desc')->get();
 
         $condicionCobro = intval($cliente->CondicionesCobranza);
 
         $estadoFacturasCuenta = $this->estadoFacturasCuenta($facturas, $condicionCobro);
 
-        return view('facturacion', ['cliente' => $cliente, 'envios' => $envios, 'facturas' => $estadoFacturasCuenta['facturas'], 'saldoCuenta' => $estadoFacturasCuenta['saldoCuenta']]);
+        return view('facturacion', ['cliente' => $cliente, 'facturas' => $estadoFacturasCuenta['facturas'], 'saldoCuenta' => $estadoFacturasCuenta['saldoCuenta']]);
     }
 
     private function estadoFacturasCuenta($facturas, $condicionCobro) {
@@ -41,7 +41,7 @@ class FacturacionController extends Controller {
                 $f->pagada = TRUE;
             }
 
-            $fechaComprobante = Carbon::createFromFormat('d/m/Y', $f->FechaComprobante);
+            $fechaComprobante = Carbon::createFromFormat('Y-m-d G:i:s', $f->FechaComprobante);
             $hoy = Carbon::now();
             $dif = $fechaComprobante->diff($hoy);
 

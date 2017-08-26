@@ -27,7 +27,7 @@ class DashboardController extends Controller {
         //$cliente = Cliente::where('ClienteID', 95)->get()->first();
 
         $envios = Envio::where('clienteidorigen', $cliente->ClienteID)->orderBy('fechaenvio', 'desc')->limit(5)->get();
-        $facturas = Factura::where('ClienteID', $cliente->ClienteID)->limit(5)->get();
+        $facturas = Factura::where('ClienteID', $cliente->ClienteID)->orderBy('FechaComprobante', 'desc')->limit(5)->get();
 
         $condicionCobro = intval($cliente->DiasSaldoPendiente);
 
@@ -59,7 +59,7 @@ class DashboardController extends Controller {
             if ($f->ImportePagado < $f->ImporteTotal) {
                 $f->pagada = FALSE;
 
-                $fechaComprobante = Carbon::createFromFormat('d/m/Y', $f->FechaComprobante);
+                $fechaComprobante = $f->FechaComprobante;
                 $hoy = Carbon::now();
                 $dif = $fechaComprobante->diff($hoy);
 
