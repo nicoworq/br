@@ -20,9 +20,22 @@ Route::get('/login', ['as' => 'login', function () {
 Route::get('/lost-password', function () {
     return view('lost-password');
 });
+
+/*
+ * REGISTER
+ */
+
 Route::get('/register', function () {
     return view('register');
 });
+Route::get('/register/check-email/', 'RegisterController@verificarEmail');
+Route::post('/register/ask-access/', 'RegisterController@solicitarAcceso');
+
+/*
+ * RECUPERAR PASS
+ */
+Route::post('/lost-password/restore/', 'RegisterController@recuperarPassword');
+
 
 Route::get('/facturacion', 'FacturacionController@view');
 
@@ -50,8 +63,3 @@ Route::get('/traer-envio/{id_envio}', 'DashboardController@traerEnvio');
 Route::post('/login-action', 'LoginController@login');
 
 
-/*
- * REGISTER
- */
-
-Route::post('/register-action', 'RegisterController@register');
