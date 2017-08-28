@@ -332,7 +332,7 @@ html {
 }
 
 body {
-    font-family: "Open Sans", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: Montserrat;
     font-size: 1rem;
     font-weight: normal;
     line-height: 1.538;
@@ -2021,6 +2021,7 @@ pre code {
     border: 2px solid #ebebeb;
     border-radius: 0;
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    font-family: Montserrat;
 }
 
 .form-control::-ms-expand {
@@ -2840,10 +2841,10 @@ tbody.collapse.show {
 
 .dropdown-menu {
     position: absolute;
-    top: 100%;
+    bottom: -90px;
     right: -1px;
     z-index: 1000;
-    display: none;
+    /* display: none; */
     float: left;
     min-width: 10rem;
     padding: 0.8462rem 0;
@@ -9609,9 +9610,9 @@ p {
 }
 
 .mai-sub-header .navbar-nav > .nav-item > .nav-link {
-    font-family: "Raleway", sans-serif;
+    font-family: Montserrat;
     font-size: 1.308rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 54px;
     min-width: 120px;
     padding: 1px 25px;
@@ -10455,7 +10456,7 @@ p {
 
 .mai-top-header .navbar-nav > .nav-item > .nav-link {
     line-height: 62px;
-    font-family: "Raleway", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.077rem;
     padding: 0 18px;
     outline: none;
@@ -10489,7 +10490,7 @@ p {
     color: #adadad;
     padding: 9px 20px;
     min-width: 175px;
-    font-family: "Raleway", sans-serif;
+    font-family: Montserrat;
 }
 
 .mai-top-header .navbar-nav > .nav-item.dropdown .dropdown-menu > .dropdown-item:hover {
@@ -13377,6 +13378,7 @@ li.L9 {
     border-color: #94b24a;
     border-radius: 4px;
     cursor: pointer;
+    font-family: Montserrat;
 }
 
 .btn-primary:hover, .btn-primary.hover {
