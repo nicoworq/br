@@ -1,6 +1,28 @@
 
 brioApp.controller("EnviosController", ["$scope", "EnviosService", function ($scope, EnviosService) {
 
+        $scope.dashboard = {
+            cargandoEnvios: false,
+            mostrarDetalleEnvio: false,
+            envioSeleccionado: {},
+            cerrarDetalleEnvio: function () {
+                this.mostrarDetalleEnvio = false;
+                this.envioSeleccionado = {}
+            },
+            traerEnvios: function () {},
+            traerEnvio: function (id_envio) {
+                this.cargandoEnvios = true;
+                EnviosService.traerEnvio(id_envio).then(function (response) {
+                    $scope.dashboard.cargandoEnvios = false;
+                    $scope.dashboard.mostrarDetalleEnvio = true;
+                    $scope.dashboard.envioSeleccionado = response.data;
+                    console.log(response.data);
+                }, function () {
+
+                });
+            }
+        };
+
 
         $scope.pagination = {
             currentPage: 1,
@@ -8,11 +30,11 @@ brioApp.controller("EnviosController", ["$scope", "EnviosService", function ($sc
             totalEnvios: 0,
             envioPageChanged: function (newPageNumber) {
 
-                
-                
-                if($scope.buscar.direccionDestinatario === '' && $scope.buscar.fechaInicio ==='' && $scope.buscar.fechaFin === ''){
+
+
+                if ($scope.buscar.direccionDestinatario === '' && $scope.buscar.fechaInicio === '' && $scope.buscar.fechaFin === '') {
                     $scope.envios.traerEnvios(newPageNumber);
-                }else{
+                } else {
                     $scope.buscar.buscarEnvios(newPageNumber);
                 }
                 /*
@@ -66,7 +88,7 @@ brioApp.controller("EnviosController", ["$scope", "EnviosService", function ($sc
 
         $scope.buscar = {
             direccionDestinatario: '',
-            fechaMaxima : Date(),
+            fechaMaxima: Date(),
             fechaInicio: '',
             fechaFin: '',
             cargandoEnvios: false,
