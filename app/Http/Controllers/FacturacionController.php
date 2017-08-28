@@ -49,10 +49,10 @@ class FacturacionController extends Controller {
             if (file_exists($dir . $archivo)) {
                 return response()->file($dir . $archivo);
             } else {
-                return redirect()->route('facturacion')->with('error', 'No encontramos la factura solicitada');
+                return redirect()->route('facturacion')->with('error', "No encontramos la factura solicitada | {$archivo}");
             }
         } else {
-            return redirect()->route('facturacion')->with('error', 'No encontramos la factura solicitada');
+            return redirect()->route('facturacion')->with('error', "No encontramos la factura solicitada | {$archivo}");
         }
     }
 
@@ -76,10 +76,10 @@ class FacturacionController extends Controller {
             if (file_exists($dir . $archivo)) {
                 return response()->file($dir . $archivo);
             } else {
-                return redirect()->route('facturacion')->with('error', 'No encontramos el resumen solicitado');
+                return redirect()->route('facturacion')->with('error', "No encontramos el resumen solicitado | {$archivo}");
             }
         } else {
-            return redirect()->route('facturacion')->with('error', 'No encontramos el resumen solicitado');
+            return redirect()->route('facturacion')->with('error', "No encontramos el resumen solicitado | {$archivo}");
         }
     }
 
