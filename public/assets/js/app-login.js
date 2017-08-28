@@ -3,20 +3,21 @@ var brioApp = angular.module("brioApp", []);
 brioApp.controller("LoginController", ["$scope", "LoginService", function ($scope, LoginService) {
 
         $scope.login = {
-            cargando : false,
+            cargando: false,
             usuario: {
                 email: "",
                 password: ""
             },
             mostrarError: false,
-            errorUsuario : '',
+            errorUsuario: '',
             ingresar: function () {
                 $scope.login.cargando = true;
                 LoginService.makeLogin($scope.login.usuario).then(function (response) {
-                    $scope.login.cargando = false;
+
                     if (response.data.logged) {
                         window.location = Brio.dash_url;
                     } else {
+                        $scope.login.cargando = false;
                         $scope.login.mostrarError = true;
                         $scope.login.errorUsuario = response.data.error;
                     }
