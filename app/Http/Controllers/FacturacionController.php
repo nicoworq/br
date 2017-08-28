@@ -18,7 +18,6 @@ class FacturacionController extends Controller {
 
         $cliente = $request->session()->get('cliente');
 
-        
         $facturas = Factura::where('ClienteID', $cliente->ClienteID)->orderBy('FechaComprobante', 'desc')->get();
 
         $condicionCobro = intval($cliente->CondicionesCobranza);
@@ -26,6 +25,62 @@ class FacturacionController extends Controller {
         $estadoFacturasCuenta = $this->estadoFacturasCuenta($facturas, $condicionCobro);
 
         return view('facturacion', ['cliente' => $cliente, 'facturas' => $estadoFacturasCuenta['facturas'], 'saldoCuenta' => $estadoFacturasCuenta['saldoCuenta']]);
+    }
+
+    public function descargarFactura($nroOperacion, Request $request) {
+        if (!$request->session()->has('cliente')) {
+            return redirect()->route('login')->with('error', 'Debe iniciar sesión para ver esta seccion');
+        }
+
+        $cliente = $request->session()->get('cliente');
+
+        $factura = Factura::where("ClienteID", $cliente->ClienteID)->where("NroOperacion", $nroOperacion)->get()->first();
+
+        if ($factura != NULL) {
+
+            //detecto si es carta de porte
+            $carpetaFactura = "efactura";
+            if (substr($factura->NroComprobante, 0, 1) === 'X') {
+                $carpetaFactura = "ecartaporte";
+            }
+
+            $dir = public_path('documentos' . DIRECTORY_SEPARATOR . $carpetaFactura . DIRECTORY_SEPARATOR);
+            $archivo = $factura->NroComprobante . ".pdf";
+            if (file_exists($dir . $archivo)) {
+                return response()->file($dir . $archivo);
+            } else {
+                return redirect()->route('facturacion')->with('error', 'No encontramos la factura solicitada');
+            }
+        } else {
+            return redirect()->route('facturacion')->with('error', 'No encontramos la factura solicitada');
+        }
+    }
+
+    public function descargarResumen($nroOperacion, Request $request) {
+        if (!$request->session()->has('cliente')) {
+            return redirect()->route('login')->with('error', 'Debe iniciar sesión para ver esta seccion');
+        }
+
+        $cliente = $request->session()->get('cliente');
+
+        $factura = Factura::where("ClienteID", $cliente->ClienteID)->where("NroOperacion", $nroOperacion)->get()->first();
+
+        if ($factura != NULL) {
+            
+            $carpetaFactura = "ereportesctacte";       
+
+            $dir = public_path('documentos' . DIRECTORY_SEPARATOR . $carpetaFactura . DIRECTORY_SEPARATOR);
+            
+            $archivo = "ResumenCta00{$nroOperacion}-{$factura->FechaComprobante->format('dmY')}.pdf";
+
+            if (file_exists($dir . $archivo)) {
+                return response()->file($dir . $archivo);
+            } else {
+                return redirect()->route('facturacion')->with('error', 'No encontramos el resumen solicitado');
+            }
+        } else {
+            return redirect()->route('facturacion')->with('error', 'No encontramos el resumen solicitado');
+        }
     }
 
     private function estadoFacturasCuenta($facturas, $condicionCobro) {
