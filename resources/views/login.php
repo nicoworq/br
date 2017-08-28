@@ -6,11 +6,10 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="icon" href="/favicon.ico" type="image/icon" >
-        <title>Expreso Brio</title>
+        <title>Expreso Brio - Acceder</title>
         <link rel="stylesheet" type="text/css" href="assets/lib/stroke-7/style.css"/>
-        <link rel="stylesheet" type="text/css" href="assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css"/>
         <link rel="stylesheet" href="assets/css/app.min.css" type="text/css"/>
-        <link rel="stylesheet" href="assets/css/worq.css" type="text/css"/>
+        <link rel="stylesheet" href="assets/css/worq.min.css" type="text/css"/>
     </head>
     <body class="mai-splash-screen" id="login" data-ng-app="brioApp">
 
@@ -71,10 +70,10 @@
                                     <a href="<?php echo App::make('url')->to('/register'); ?>" class="link-acceso">
                                         <span>No tienes acceso?</span>
                                         Solicitar acceso
-                                        
+
                                     </a>
-                                    
-                                    
+
+
                                 </div>
                             </div>
                         </form>

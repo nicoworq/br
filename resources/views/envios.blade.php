@@ -71,7 +71,7 @@
                     //$estadoEnvio = $envio->estado == "Entregado" ? "entregado" : "en-transito";
                     ?>
                     @verbatim
-                    <div class="listado-item envio-full <?php // echo $estadoEnvio;         ?>" 
+                    <div class="listado-item envio-full <?php // echo $estadoEnvio;          ?>" 
 
 
                          dir-paginate="envio in envios.listadoEnvios | itemsPerPage: pagination.enviosPerPage" 
@@ -98,7 +98,8 @@
 
                             </div>
                             <div class="accion-listado">
-                                <a href="#" class="icon" title="Ver Detalles"><i class="s7-search"></i></a>
+                                <a class="icon" title="Ver Detalles" ng-click="dashboard.traerEnvio(envio.envioid)"><i class="s7-search"></i></a>
+                                
                             </div>
 
                             <div class="item-listado item-listado-bultos">
@@ -123,18 +124,18 @@
                             <!--
                             <div class="item-listado item-listado-kilos">
                                 <div class="indicator-value-title">Kilos</div>
-                                <span class="indicator-value-counter"><?php // echo $envio->kilos      ?></span>
+                                <span class="indicator-value-counter"><?php // echo $envio->kilos       ?></span>
 
 
                             </div>
                             <div class="item-listado item-listado-vd">
                                 <div class="indicator-value-title">Valor declarado</div>
-                                <span class="indicator-value-counter">$<?php //echo $envio->valordeclarado      ?></span>
+                                <span class="indicator-value-counter">$<?php //echo $envio->valordeclarado       ?></span>
 
                             </div>
                             <div class="item-listado item-listado-remitos">
                                 <div class="indicator-value-title">Remitos</div>
-                                <span class="indicator-value-counter"><?php //echo $envio->remitos      ?></span>
+                                <span class="indicator-value-counter"><?php //echo $envio->remitos       ?></span>
 
                             </div>-->
 
@@ -155,6 +156,91 @@
             <dir-pagination-controls on-page-change="pagination.envioPageChanged(newPageNumber)" template-url="assets/js/directives/dirPagination.tpl.html"></dir-pagination-controls>    
         </div>
 
+    </div>
+
+    <div id="tapa-envio" class="ng-cloak" ng-show="dashboard.mostrarDetalleEnvio">
+        @verbatim
+        <div id="detalle-envio" ng-click="dashboard.cerrarDetalleEnvio();">
+            <div id="detalle-envio-cerrar">
+                <i class="s7-close-circle"></i>
+            </div>
+
+            <div class="panel panel-default panel-table">
+                <div class="panel-heading">Detalle de Envío
+
+                </div>
+                <div class="panel-body">
+                    <div class="listado-item listado-detalle">
+
+                        <div class="cuerpo-listado cuerpo-listado-detalle">     
+
+                            <div class="fila-listado-detalle">
+
+                                <div class=" float-left">
+                                    <div class="indicator-value-title">Estado</div>
+                                    <span class="indicator-value-counter">{{dashboard.envioSeleccionado.estado}}</span>
+                                </div>
+                                <div class="float-right ">
+                                    <div class="indicator-value-title text-right">Fecha Envío</div>
+                                    <span class="indicator-value-counter">{{dashboard.envioSeleccionado.fecha}}</span>
+                                </div>
+
+
+                            </div>
+
+                            <div class="fila-listado-detalle">
+                                <div class="float-left detalle-destinatario">
+                                    <div class="indicator-value-title text-left ">Destinatario</div>
+                                    <span class="indicator-value-counter">{{dashboard.envioSeleccionado.clientedestino}}</span>
+                                </div>
+                            </div>
+                            <div class="fila-listado-detalle">
+                                <div class="float-left detalle-localidad ">
+                                    <div class="indicator-value-title text-left">Localidad</div>
+                                    <span class="indicator-value-counter">{{dashboard.envioSeleccionado.localidaddestino}}</span>
+                                </div>      
+                            </div>
+                            <div class="fila-listado-detalle">
+                                <div class="float-left detalle-direccion">
+                                    <div class="indicator-value-title text-left">Dirección</div>
+                                    <span class="indicator-value-counter">{{dashboard.envioSeleccionado.domiciliodestino}}</span>
+                                </div>
+                            </div>
+                            <div class="fila-listado-detalle">
+                                <div class="float-left">
+                                    <div class="indicator-value-title text-left">Bultos</div>
+                                    <span class="indicator-value-counter">{{dashboard.envioSeleccionado.bultos}}</span>
+                                </div>
+
+                                <div class="float-right">
+                                    <div class="indicator-value-title text-right">Valor Declarado</div>
+                                    <span class="indicator-value-counter">${{dashboard.envioSeleccionado.valordeclarado}}</span>
+                                </div>
+
+
+                            </div>
+                            <div class="fila-listado-detalle">                              
+                                <div class="float-left">
+                                    <div class="indicator-value-title text-left">Remitos</div>
+                                    <span class="indicator-value-counter">{{dashboard.envioSeleccionado.remitos}}</span>
+                                </div>
+                                <div class="float-right">
+                                    <div class="indicator-value-title text-right">Comprobante</div>
+                                    <span class="indicator-value-counter">{{dashboard.envioSeleccionado.nrocomprobante}}</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        @endverbatim
     </div>
 </div>
 

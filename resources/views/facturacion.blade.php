@@ -37,19 +37,23 @@
                         <div class="cuerpo-listado">     
                             <div class="icon-listado"><span class="s7-note2"></span></div>
 
-                            <div class="accion-listado">
-                                <a href="#" class="icon" title="Descargar Factura"><i class="s7-download"></i></a>
-                            </div>
+                            <div class="item-listado item-listado-importe-abonado">
+                                <div class="indicator-value-title">Descargar</div>
+                                <div class="btn-doble">
+                                    <a target="blank" href="<?php echo App::make('url')->to("/facturacion/descargar-factura/{$factura->NroOperacion}") ?>">Factura</a>
+                                    <a target="blank" href="<?php echo App::make('url')->to("/facturacion/descargar-resumen/{$factura->NroOperacion}") ?>">Resumen</a>
+                                </div>
+                            </div> 
 
                             <div class="item-listado item-listado-importe-abonado">
-                                 <div class="indicator-value-title">Importe Abonado</div>
+                                <div class="indicator-value-title">Importe Abonado</div>
                                 <span class="indicator-value-counter">$<?php echo number_format($factura->ImportePagado, 2, ",", ".") ?></span>
-                               
+
                             </div>                  
                             <div class="item-listado">
                                 <div class="indicator-value-title">Importe Total</div>
                                 <span class="indicator-value-counter">$<?php echo number_format($factura->ImporteTotal, 2, ",", "."); ?></span>
-                                
+
                             </div>
 
                         </div>

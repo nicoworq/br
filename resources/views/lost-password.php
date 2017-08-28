@@ -4,14 +4,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="shortcut icon" href="assets/img/favicon.png">
-        <title>Expreso Brio</title>
+        <link rel="icon" href="/favicon.ico" type="image/icon" >
+        <title>Expreso Brio - Recuperar Contraseña</title>
         <link rel="stylesheet" type="text/css" href="assets/lib/stroke-7/style.css"/>
-        <link rel="stylesheet" type="text/css" href="assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css"/>
-        <link rel="stylesheet" href="assets/css/worq.css" type="text/css"/>
         <link rel="stylesheet" href="assets/css/app.min.css" type="text/css"/>
+        <link rel="stylesheet" href="assets/css/worq.min.css" type="text/css"/>
     </head>
     <body class="mai-splash-screen" id="register" data-ng-app="brioApp">
         <div class="mai-wrapper mai-forgot-password" data-ng-controller="LostPasswordController">
@@ -50,6 +47,11 @@
 
                                         </a>
 
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <span class="alternative-message text-center"> <a href="<?php echo App::make('url')->to('/login'); ?>"> Volver</a></span>
                                     </div>
                                 </div>
                             </form>

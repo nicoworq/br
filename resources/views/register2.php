@@ -4,20 +4,17 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
         <link rel="icon" href="/favicon.ico" type="image/icon" >
         <title>Expreso Brio - Solicitar Acceso</title>
- 
-        <link rel="stylesheet" type="text/css" href="assets/lib/font-awesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/lib/stroke-7/style.css"/>
         <link rel="stylesheet" href="assets/css/app.min.css" type="text/css"/>
-        <link rel="stylesheet" href="assets/css/worq.css" type="text/css"/>
+        <link rel="stylesheet" href="assets/css/worq.min.css" type="text/css"/>
     </head>
     <body class="mai-splash-screen" id="register" data-ng-app="brioApp">
         <div class="mai-wrapper mai-sign-up" data-ng-controller="RegisterController as registerController">
             <div class="main-content container">
                 <div class="splash-container row" style="width: 900px">
-                    <div class="col-sm-6 form-message">
+                    <div class="col-sm-7 form-message">
                         <div class="ajaxing ng-cloak" ng-show="register.cargando"><span></span></div>
                         <img src="assets/img/logo-brio.svg" alt="logo" height="70" class="logo-img mb-4">
 

@@ -9,8 +9,8 @@
         <title>Expreso Brio - @yield('title')</title>
         <link rel="stylesheet" type="text/css" href="assets/lib/stroke-7/style.css"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/app.css" type="text/css"/>
-        <link rel="stylesheet" href="assets/css/worq.css" type="text/css"/>
+        <link rel="stylesheet" href="assets/css/app.min.css" type="text/css"/>
+        <link rel="stylesheet" href="assets/css/worq.min.css" type="text/css"/>
 
     </head>
     <body ng-app="brioApp">
