@@ -57,7 +57,7 @@
                 <div class="panel-body">
 
 
-                    <div class="listado-item" data-ng-if="!envios.listadoEnvios.length">
+                    <div class="listado-item item-sin-envios" data-ng-if="!envios.listadoEnvios.length">
                         <div class="cuerpo-listado">       
                             <div class="icon-listado"><span class="s7-box2"></span></div>
                             <div class="item-listado">

@@ -50,7 +50,7 @@ if ($facturasVencidas) {
                             <div class="listado-item">
                                 <div class="cuerpo-listado">       
                                     <div class="icon-listado"><span class="s7-note2"></span></div>
-                                    <div class="item-listado">
+                                    <div class="item-listado item-sin-facturas">
                                         <span class="indicator-value-counter">No tienes facturas disponibles</span>
                                     </div>
 
@@ -87,8 +87,8 @@ if ($facturasVencidas) {
                                     <div class="item-listado item-listado-importe-abonado">
                                         <div class="indicator-value-title">Descargar</div>
                                         <div class="btn-doble">
-                                            <a href="#">Factura</a>
-                                            <a href="#">Resumen</a>
+                                            <a target="blank" href="<?php echo App::make('url')->to("/facturacion/descargar-factura/{$factura->NroOperacion}") ?>">Factura</a>
+                                            <a target="blank" href="<?php echo App::make('url')->to("/facturacion/descargar-resumen/{$factura->NroOperacion}") ?>">Resumen</a>
                                         </div>
                                     </div> 
 
@@ -135,10 +135,10 @@ if ($facturasVencidas) {
 
 
                         <?php if (!count($envios)) { ?>
-                            <div class="listado-item">
+                            <div class="listado-item item-sin-envios">
                                 <div class="cuerpo-listado">       
                                     <div class="icon-listado"><span class="s7-box2"></span></div>
-                                    <div class="item-listado">
+                                    <div class="item-listado ">
                                         <span class="indicator-value-counter">No tienes envíos disponibles</span>
                                     </div>
 
