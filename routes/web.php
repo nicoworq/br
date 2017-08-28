@@ -37,7 +37,15 @@ Route::post('/register/ask-access/', 'RegisterController@solicitarAcceso');
 Route::post('/lost-password/restore/', 'RegisterController@recuperarPassword');
 
 
-Route::get('/facturacion', 'FacturacionController@view');
+/*
+ * FACTURAS
+ */
+
+Route::get('/facturacion',['as'=>'facturacion','uses' => 'FacturacionController@view']);
+Route::get('/facturacion/descargar-factura/{nroOperacion}','FacturacionController@descargarFactura');
+Route::get('/facturacion/descargar-resumen/{nroOperacion}','FacturacionController@descargarResumen');
+
+
 
 /*
  * ENVIOS
@@ -61,5 +69,6 @@ Route::get('/traer-envio/{id_envio}', 'DashboardController@traerEnvio');
  */
 
 Route::post('/login-action', 'LoginController@login');
+
 
 
