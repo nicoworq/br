@@ -13416,6 +13416,7 @@ li.L9 {
     color: #545454;
     background-color: #FFFFFF;
     border-color: #cccccc;
+    border-radius: 4px;
 }
 
 .btn-secondary:hover, .note-btn-group .btn-default:hover, .btn-secondary.hover, .note-btn-group .hover.btn-default {
