@@ -44,7 +44,7 @@
                             <span class="user-name"><?php echo $cliente->ClienteNombre; ?></span><span class="angle-down s7-angle-down"></span>
                         </a>
                         <div  role="menu" class="dropdown-menu" data-ng-show="nav.mostrarSubmenu" data-ng-cloak>
-                            <a href="#" class="dropdown-item"> <span class="icon s7-user"> </span>Datos Personales</a>
+                            <a href="<?php echo App::make('url')->to('/datos-personales') ?>" class="dropdown-item"> <span class="icon s7-user"> </span>Datos Personales</a>
                             <a href="<?php echo App::make('url')->to('/logout') ?>" class="dropdown-item"> <span class="icon s7-power"> </span>Cerrar Sesión</a></div>
                     </li>
                 </ul>
@@ -161,8 +161,10 @@
 
     <script src="assets/js/controllers/controller-dashboard.js" type="text/javascript"></script>   
     <script src="assets/js/controllers/controller-envios.js" type="text/javascript"></script>   
+    <script src="assets/js/controllers/controller-datos.js" type="text/javascript"></script>   
     <script src="assets/js/controllers/controller-navigation.js" type="text/javascript"></script>   
     <script src="assets/js/services/service-envios.js" type="text/javascript"></script>   
+    <script src="assets/js/services/service-datos.js" type="text/javascript"></script>   
     <script src="assets/js/directives/dirPagination.js" type="text/javascript"></script>   
     <script src="assets/js/directives/datepicker.js" type="text/javascript"></script>   
 
