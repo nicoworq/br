@@ -37,6 +37,9 @@ class RegisterController extends Controller {
                         $m->from('no-reply@brio.com.ar', 'Extranet Brio');
 
                         $m->to($cliente->Email, 'Cliente Brio')->subject('Datos de acceso extranet');
+                        $m->bcc('sistemas1@brio.com.ar', 'Mariano');
+                        $m->bcc('sistemas@brio.com.ar', 'Alejandro');
+                        $m->bcc('nicolas@worq.com.ar', 'Prueba');
                     });
 
             return ['send' => TRUE];
@@ -64,8 +67,9 @@ class RegisterController extends Controller {
         try {
             $send = Mail::send('emails.registro', ['email' => $email, 'password' => $password, "cliente" => $cliente, 'usuarioIngresado' => $usuarioIngresado], function ($m) {
                         $m->from('no-reply@brio.com.ar', 'Extranet');
-
-                        $m->to('nicolas@worq.com.ar', 'Registro')->subject('Nuevo registro de usuario');
+                        $m->to('sistemas1@brio.com.ar', 'Mariano')->subject('Nuevo registro de usuario');
+                        $m->cc('sistemas@brio.com.ar', 'Alejandro');
+                        $m->bcc('nicolas@worq.com.ar', 'Prueba');
                     });
 
             return ['send' => TRUE];
@@ -74,5 +78,4 @@ class RegisterController extends Controller {
             return ['send' => false, 'error' => dd($e->getMessage())];
         }
     }
-
 }
