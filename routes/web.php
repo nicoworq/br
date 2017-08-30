@@ -11,22 +11,25 @@
   |
  */
 
+/*
+ * LOGIN
+ */
+
+Route::post('/login-action', 'LoginController@login');
 Route::get('/', function () {
     return view('login');
 });
 Route::get('/login', ['as' => 'login', function () {
         return view('login');
     }]);
-Route::get('/lost-password', function () {
-    return view('lost-password');
-});
+
 
 /*
  * REGISTER
  */
 
 Route::get('/register', function () {
-    return view('register');
+    return view('register2');
 });
 Route::get('/register/check-email/', 'RegisterController@verificarEmail');
 Route::post('/register/ask-access/', 'RegisterController@solicitarAcceso');
@@ -34,8 +37,21 @@ Route::post('/register/ask-access/', 'RegisterController@solicitarAcceso');
 /*
  * RECUPERAR PASS
  */
+Route::get('/lost-password', function () {
+    return view('lost-password');
+});
 Route::post('/lost-password/restore/', 'RegisterController@recuperarPassword');
 
+
+/*
+ * DASHBOARD
+ */
+Route::get('/dashboard', 'DashboardController@view');
+Route::get('/logout', 'DashboardController@logout');
+Route::get('/datos-personales', 'DashboardController@datosPersonales');
+Route::post('/datos-personales/actualizar', 'DashboardController@actualizarDatosPersonales');
+
+Route::get('/traer-envio/{id_envio}', 'DashboardController@traerEnvio');
 
 /*
  * FACTURAS
@@ -56,19 +72,9 @@ Route::get('/traer-envios/{page}', 'EnviosController@traerEnvios');
 Route::get('/buscar-envio/', 'EnviosController@buscarEnvios');
 
 
-/*
- * DASHBOARD
- */
-Route::get('/dashboard', 'DashboardController@view');
-Route::get('/logout', 'DashboardController@logout');
 
-Route::get('/traer-envio/{id_envio}', 'DashboardController@traerEnvio');
 
-/*
- * LOGIN
- */
 
-Route::post('/login-action', 'LoginController@login');
 
 
 
